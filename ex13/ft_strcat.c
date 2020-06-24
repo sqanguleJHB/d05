@@ -1,31 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strstr.c                                        :+:      :+:    :+:   */
+/*   ft_strcat.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sqangule <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/06/22 12:01:54 by sqangule          #+#    #+#             */
-/*   Updated: 2020/06/24 17:36:07 by sqangule         ###   ########.fr       */
+/*   Created: 2020/06/24 17:19:04 by sqangule          #+#    #+#             */
+/*   Updated: 2020/06/24 17:33:49 by sqangule         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strstr(char *str, char *to_find)
+char	*ft_strcat(char *dest, char *src)
 {
-	int		i;
-	int		j;
+	int 	i;
+	int 	j;
 
-	if (!to_find[0])
-		return (str);
 	i = 0;
-	while (str[i])
-	{
-		j = 0;
-		while (str[i + j] == to_find[j])
-			j++;
-		if (!to_find[j])
-			return (&str[i]);
+	j = 0;
+	while (dest[i])
 		i++;
+	while (src[j])
+	{
+		dest[i] = src[j];
+		i++;
+		j++;
 	}
-	return (NULL);
+	dest[i] = '\0';
+	return (dest);
 }

@@ -1,31 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strstr.c                                        :+:      :+:    :+:   */
+/*   ft_str_is_uppercase.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sqangule <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/06/22 12:01:54 by sqangule          #+#    #+#             */
-/*   Updated: 2020/06/24 17:36:07 by sqangule         ###   ########.fr       */
+/*   Created: 2020/06/24 15:43:35 by sqangule          #+#    #+#             */
+/*   Updated: 2020/06/24 16:24:18 by sqangule         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strstr(char *str, char *to_find)
+int 	ft_str_is_uppercase(char *str)
 {
-	int		i;
-	int		j;
+	int 	i;
 
-	if (!to_find[0])
-		return (str);
-	i = 0;
-	while (str[i])
-	{
-		j = 0;
-		while (str[i + j] == to_find[j])
-			j++;
-		if (!to_find[j])
-			return (&str[i]);
-		i++;
-	}
-	return (NULL);
+	i = -1;
+	while (str[++i])
+		if (!(str[i] >= 'A' && str[i] <= 'Z'))
+			return (0);
+	return (1);
 }
